@@ -3,6 +3,27 @@
 <head>
   <title>LongevityCare - Login do Cuidador</title>
   <link rel="stylesheet" href="./CSS/cadastro.css">
+  <script>
+    function cadastrarCuidador() {
+      // Validar os campos do formulário
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirm-password').value;
+
+      if (email === '' || password === '' || confirmPassword === '') {
+        alert('Por favor, preencha todos os campos.');
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert('As senhas não coincidem.');
+        return false;
+      }
+
+      // Redirecionar para a página de login
+      window.location.href = 'login_cuidados.html';
+    }
+  </script>
 </head>
 <body>
   <div class="header">
@@ -18,7 +39,7 @@
   <div class="content">
     <div class="login-box">
       <h2 class="login-title">Cadastro do Cuidador</h2>
-      <form class="login-form" action="#" method="POST">
+      <form class="login-form" action="#" method="POST" onsubmit="return cadastrarCuidador()">
         <div class="form-group">
           <label for="email">E-mail:</label>
           <input type="email" id="email" name="email" required>
@@ -28,10 +49,10 @@
           <input type="password" id="password" name="password" required>
         </div>
         <div class="form-group">
-            <label for="password">confirmar Senha:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirmar Senha:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
           </div>
-        <button type="submit" class="login-button">cadastrar</button>
+        <button type="submit" class="login-button">Cadastrar</button>
       </form>
     </div>
   </div>
