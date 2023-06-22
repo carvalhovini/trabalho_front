@@ -3,6 +3,26 @@
 <head>
   <title>Painel do Administrador</title>
   <link rel="stylesheet" href="/CSS/admin_panel.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .content {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel-content {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chart-container {
+      width: 80%;
+    }
+
+    .mini-screen {
+      width: 1740px;
+    }
+  </style>
 </head>
 <body>
   <div class="wrapper">
@@ -20,21 +40,41 @@
       <h2 class="panel-title">Painel do Administrador</h2>
       <div class="panel-menu">
         <a class="panel-menu-item" href="#">Acessos</a>
-        <a class="panel-menu-item" href="#">Cuidadores</a>
-        <a class="panel-menu-item" href="#">Dados em Geral</a>
+        <a class="panel-menu-item" href="encontre_um_cuidador.html">Cuidadores</a>
+        <a class="panel-menu-item" href="saiba-mais.html">Dados em Geral</a>
       </div>
       <div class="panel-content">
         <div class="section">
-          <h3>Gerenciar Acessos</h3>
-          <p>Aqui você pode gerenciar os acessos ao site.</p>
+          <h3>Gerenciar Acessos de Usuários</h3>
+          <p>Aqui você pode gerenciar os acessos dos usuários ao site.</p>
+          <!-- Adicione um elemento para exibir o gráfico -->
+          <div class="chart-container">
+            <canvas id="chart"></canvas>
+          </div>
         </div>
         <div class="section">
-          <h3>Gerenciar Cuidadores</h3>
-          <p>Aqui você pode gerenciar os cuidadores cadastrados.</p>
+          <h3>Gerenciar Cuidadores Cadastrados</h3>
+          <p>Aqui você pode gerenciar os cuidadores cadastrados no sistema.</p>
+          <!-- Adicione um elemento para a mini tela dos cuidadores -->
+          <div class="mini-screen">
+            <!-- Conteúdo da mini tela dos cuidadores -->
+            <div class="cuidador">
+              <img src="./ARQUIVOS/cuidador.jfif" alt="Cuidador 1">
+              <h4>Nome do Cuidador 1</h4>
+              <p>Especialidade: Cuidados com idosos</p>
+            </div>
+            <div class="cuidador">
+              <img src="./ARQUIVOS/cuidador.jfif" alt="Cuidador 2">
+              <h4>Nome do Cuidador 2</h4>
+              <p>Especialidade: Cuidados domiciliares</p>
+            </div>
+          </div>
         </div>
         <div class="section">
-          <h3>Gerenciar Dados em Geral</h3>
+          <h3>Gerenciar Dados do Site</h3>
           <p>Aqui você pode gerenciar os dados gerais do site.</p>
+          <!-- Adicione um elemento para o acesso aos usuários -->
+          <a class="access-link" href="usuarios.html">Acessar Usuários</a>
         </div>
       </div>
     </div>
@@ -46,5 +86,31 @@
       </div>
     </div>
   </div>
+
+  <script>
+    // Script para criar o gráfico usando o Chart.js
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+        datasets: [{
+          label: 'Dados do Site',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(75, 192, 192, 0.8)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>

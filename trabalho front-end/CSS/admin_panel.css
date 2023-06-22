@@ -99,12 +99,14 @@ body {
   }
   
   .section h3 {
-    font-size: 18px;
+    font-size: 20px;
+    color: #333;
     margin-bottom: 10px;
   }
   
   .section p {
     font-size: 16px;
+    color: #666;
   }
   
   .footer {
@@ -133,3 +135,60 @@ body {
     background-color: #45a049;
   }
   
+  .mini-screen {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .access-link {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .access-link:hover {
+    background-color: #45a049;
+  }
+
+  .chart-container {
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .cuidador {
+    margin-bottom: 20px;
+  }
+
+  
+  .cuidador h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .content {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .panel-content {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chart-container {
+    width: 80%;
+  }
+  
+  .mini-screen {
+    width: 1740px;
+  }
